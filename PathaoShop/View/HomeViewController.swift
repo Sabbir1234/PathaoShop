@@ -12,12 +12,12 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var shopListTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupTableView()
+    }
+    
+    private func setupTableView() {
         shopListTableView.delegate = self
         shopListTableView.dataSource = self
-//        shopListTableView.sectionHeaderHeight = UITableView.automaticDimension
-//        shopListTableView.estimatedSectionHeaderHeight = 60
-//        shopListTableView.rowHeight = UITableView.automaticDimension
-//        shopListTableView.estimatedRowHeight = 150
         shopListTableView.register(UINib(nibName: "ShopHeaderView", bundle: nil), forHeaderFooterViewReuseIdentifier: "ShopHeaderView")
     }
 
@@ -38,7 +38,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "ShopHeaderView") as? ShopHeaderView
         headerView?.shopNameLabel.text = "Karim Shop"
-        headerView?.backgroundColor = .cyan
+        //headerView?.backgroundConfiguration?.backgroundColor = .gray
         return headerView!
     }
     
