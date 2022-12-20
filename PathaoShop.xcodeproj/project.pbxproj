@@ -14,6 +14,11 @@
 		0179722C29522C2D00E66CE6 /* PathaoShop.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0179722A29522C2D00E66CE6 /* PathaoShop.xcdatamodeld */; };
 		0179722E29522C2E00E66CE6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0179722D29522C2E00E66CE6 /* Assets.xcassets */; };
 		0179723129522C2E00E66CE6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0179722F29522C2E00E66CE6 /* LaunchScreen.storyboard */; };
+		0179723A29522D2300E66CE6 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0179723929522D2300E66CE6 /* HomeViewController.swift */; };
+		0179723C29522DFE00E66CE6 /* pathao-shop.json in Resources */ = {isa = PBXBuildFile; fileRef = 0179723B29522DFE00E66CE6 /* pathao-shop.json */; };
+		0179723E295230E500E66CE6 /* ShopListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0179723D295230E500E66CE6 /* ShopListCell.swift */; };
+		01797240295231D600E66CE6 /* ShopHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0179723F295231D600E66CE6 /* ShopHeaderView.xib */; };
+		017972442952351B00E66CE6 /* ShopHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017972432952351B00E66CE6 /* ShopHeaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +31,11 @@
 		0179722D29522C2E00E66CE6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0179723029522C2E00E66CE6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0179723229522C2E00E66CE6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0179723929522D2300E66CE6 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		0179723B29522DFE00E66CE6 /* pathao-shop.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "pathao-shop.json"; sourceTree = "<group>"; };
+		0179723D295230E500E66CE6 /* ShopListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopListCell.swift; sourceTree = "<group>"; };
+		0179723F295231D600E66CE6 /* ShopHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShopHeaderView.xib; sourceTree = "<group>"; };
+		017972432952351B00E66CE6 /* ShopHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopHeaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +68,8 @@
 		0179722029522C2D00E66CE6 /* PathaoShop */ = {
 			isa = PBXGroup;
 			children = (
+				0179723B29522DFE00E66CE6 /* pathao-shop.json */,
+				0179723829522CB200E66CE6 /* View */,
 				0179722129522C2D00E66CE6 /* AppDelegate.swift */,
 				0179722329522C2D00E66CE6 /* SceneDelegate.swift */,
 				0179722529522C2D00E66CE6 /* ViewController.swift */,
@@ -68,6 +80,17 @@
 				0179722A29522C2D00E66CE6 /* PathaoShop.xcdatamodeld */,
 			);
 			path = PathaoShop;
+			sourceTree = "<group>";
+		};
+		0179723829522CB200E66CE6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0179723929522D2300E66CE6 /* HomeViewController.swift */,
+				0179723D295230E500E66CE6 /* ShopListCell.swift */,
+				0179723F295231D600E66CE6 /* ShopHeaderView.xib */,
+				017972432952351B00E66CE6 /* ShopHeaderView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -128,7 +151,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0179723C29522DFE00E66CE6 /* pathao-shop.json in Resources */,
 				0179723129522C2E00E66CE6 /* LaunchScreen.storyboard in Resources */,
+				01797240295231D600E66CE6 /* ShopHeaderView.xib in Resources */,
 				0179722E29522C2E00E66CE6 /* Assets.xcassets in Resources */,
 				0179722929522C2D00E66CE6 /* Main.storyboard in Resources */,
 			);
@@ -141,10 +166,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0179723A29522D2300E66CE6 /* HomeViewController.swift in Sources */,
+				0179723E295230E500E66CE6 /* ShopListCell.swift in Sources */,
 				0179722629522C2D00E66CE6 /* ViewController.swift in Sources */,
 				0179722229522C2D00E66CE6 /* AppDelegate.swift in Sources */,
 				0179722C29522C2D00E66CE6 /* PathaoShop.xcdatamodeld in Sources */,
 				0179722429522C2D00E66CE6 /* SceneDelegate.swift in Sources */,
+				017972442952351B00E66CE6 /* ShopHeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
