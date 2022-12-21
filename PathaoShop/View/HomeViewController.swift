@@ -13,6 +13,8 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
+        let viewModel = ShopViewModel()
+        viewModel.loadDataFromJsonFile()
     }
     
     private func setupTableView() {

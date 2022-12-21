@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		016AABC329538FBD00053B87 /* ShopModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016AABC229538FBD00053B87 /* ShopModel.swift */; };
+		016AABC52953909200053B87 /* ShopViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016AABC42953909200053B87 /* ShopViewModel.swift */; };
+		016AABC72953912100053B87 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016AABC62953912100053B87 /* AppConstants.swift */; };
 		0179722229522C2D00E66CE6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0179722129522C2D00E66CE6 /* AppDelegate.swift */; };
 		0179722429522C2D00E66CE6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0179722329522C2D00E66CE6 /* SceneDelegate.swift */; };
-		0179722629522C2D00E66CE6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0179722529522C2D00E66CE6 /* ViewController.swift */; };
 		0179722929522C2D00E66CE6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0179722729522C2D00E66CE6 /* Main.storyboard */; };
 		0179722C29522C2D00E66CE6 /* PathaoShop.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0179722A29522C2D00E66CE6 /* PathaoShop.xcdatamodeld */; };
 		0179722E29522C2E00E66CE6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0179722D29522C2E00E66CE6 /* Assets.xcassets */; };
@@ -25,10 +27,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		016AABC229538FBD00053B87 /* ShopModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopModel.swift; sourceTree = "<group>"; };
+		016AABC42953909200053B87 /* ShopViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopViewModel.swift; sourceTree = "<group>"; };
+		016AABC62953912100053B87 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		0179721E29522C2D00E66CE6 /* PathaoShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PathaoShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0179722129522C2D00E66CE6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0179722329522C2D00E66CE6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		0179722529522C2D00E66CE6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		0179722829522C2D00E66CE6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0179722B29522C2D00E66CE6 /* PathaoShop.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PathaoShop.xcdatamodel; sourceTree = "<group>"; };
 		0179722D29522C2E00E66CE6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -78,12 +82,12 @@
 				0179723829522CB200E66CE6 /* View */,
 				0179722129522C2D00E66CE6 /* AppDelegate.swift */,
 				0179722329522C2D00E66CE6 /* SceneDelegate.swift */,
-				0179722529522C2D00E66CE6 /* ViewController.swift */,
 				0179722729522C2D00E66CE6 /* Main.storyboard */,
 				0179722D29522C2E00E66CE6 /* Assets.xcassets */,
 				0179722F29522C2E00E66CE6 /* LaunchScreen.storyboard */,
 				0179723229522C2E00E66CE6 /* Info.plist */,
 				0179722A29522C2D00E66CE6 /* PathaoShop.xcdatamodeld */,
+				016AABC229538FBD00053B87 /* ShopModel.swift */,
 			);
 			path = PathaoShop;
 			sourceTree = "<group>";
@@ -98,6 +102,8 @@
 				89A0C95129530B2B00ED7537 /* ShopItemCell.swift */,
 				89A0C95229530B2B00ED7537 /* ShopItemCell.xib */,
 				89A0C957295316A100ED7537 /* NSObject+Extension.swift */,
+				016AABC42953909200053B87 /* ShopViewModel.swift */,
+				016AABC62953912100053B87 /* AppConstants.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -179,7 +185,9 @@
 				0179723A29522D2300E66CE6 /* HomeViewController.swift in Sources */,
 				0179723E295230E500E66CE6 /* ShopListCell.swift in Sources */,
 				89A0C958295316A100ED7537 /* NSObject+Extension.swift in Sources */,
-				0179722629522C2D00E66CE6 /* ViewController.swift in Sources */,
+				016AABC72953912100053B87 /* AppConstants.swift in Sources */,
+				016AABC329538FBD00053B87 /* ShopModel.swift in Sources */,
+				016AABC52953909200053B87 /* ShopViewModel.swift in Sources */,
 				0179722229522C2D00E66CE6 /* AppDelegate.swift in Sources */,
 				0179722C29522C2D00E66CE6 /* PathaoShop.xcdatamodeld in Sources */,
 				0179722429522C2D00E66CE6 /* SceneDelegate.swift in Sources */,
