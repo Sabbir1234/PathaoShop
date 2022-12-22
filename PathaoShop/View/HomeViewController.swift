@@ -10,11 +10,12 @@ import UIKit
 class HomeViewController: UIViewController {
 
     @IBOutlet weak var shopListTableView: UITableView!
+    var viewModel: HomePageDelegate?
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
-        let viewModel = ShopViewModel()
-        viewModel.loadDataFromJsonFile()
+        viewModel = ShopViewModel()
+        viewModel?.loadDataFromJsonFile(completion: nil)
     }
     
     private func setupTableView() {
@@ -28,7 +29,7 @@ class HomeViewController: UIViewController {
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 5
+        return viewModel?.shops.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -39,14 +40,14 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: ShopHeaderView.className) as? ShopHeaderView
-        headerView?.shopNameLabel.text = "Karim Shop"
+        headerView?.shopNameLabel.text = viewModel?.shops[section].shopName
         //headerView?.backgroundConfiguration?.backgroundColor = .gray
         return headerView!
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: ShopListCell = tableView.dequeueReusableCell(withIdentifier: ShopListCell.className, for: indexPath) as! ShopListCell
-        cell.backgroundColor = .green
+        cell.index = indexPath.row
         return cell
     }
     

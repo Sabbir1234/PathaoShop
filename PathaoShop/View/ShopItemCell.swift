@@ -47,5 +47,31 @@ class ShopItemCell: UICollectionViewCell {
         buttonsView.layer.borderColor = UIColor.blue.cgColor
         
     }
+    
+    func configureCell(item: Prouduct) {
+        self.nameLabel.text = item.name
+        self.detailsLabel.text = item.prouductDescription
+        if let price = item.price {
+            self.priceLabel.text = "\(price) $"
+        }
+        loadImage(url: URL(string: item.image ?? ""))
+    }
+    
+    func loadImage(url: URL?) {
+        if let imageFromCache = ShopViewModel.imageCache.object(forKey: url as AnyObject) as? UIImage {
+            itemImageView.image = imageFromCache
+        } else {
+            DispatchQueue.global().async { [weak self] in
+                if let url = url, let data = try? Data(contentsOf: url) {
+                    if let image = UIImage(data: data) {
+                        ShopViewModel.imageCache.setObject(image, forKey: url as AnyObject)
+                        DispatchQueue.main.async {
+                            self?.itemImageView.image = image
+                        }
+                    }
+                }
+            }
+        }
+    }
 
 }

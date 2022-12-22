@@ -7,20 +7,48 @@
 
 import Foundation
 
-class ShopViewModel {
+protocol HomePageDelegate {
+    func loadDataFromJsonFile(completion: ((_ success: Bool) -> Void)?)
+    var shops: [Shop] { get }
+}
+
+protocol ItemListDelegate {
+    var shopItems: [Prouduct] { get }
+    func loadShopItems(index: Int)
+}
+
+class ShopViewModel: HomePageDelegate, ItemListDelegate {
     
+    var shops = [Shop]()
+    var shopItems = [Prouduct]()
     
-    func loadDataFromJsonFile() {
+    static let imageCache = NSCache<AnyObject, AnyObject>()
+    
+    func loadDataFromJsonFile(completion: ((_ success: Bool) -> Void)? = nil) {
         if let path = Bundle.main.path(forResource: AppConstant.pathao_shop, ofType: "json") {
             do {
                 let jsonData = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
-                let shopList: ShopList = try! JSONDecoder().decode([Shop].self, from: jsonData)
-                debugPrint("json data is \(shopList)")
+                self.shops = try! JSONDecoder().decode([Shop].self, from: jsonData)
+                debugPrint("json data is \(shops)")
+                completion?(true)
             } catch let error {
                 debugPrint("\(error)")
             }
         }
     }
+    
+    func loadShopItems(index: Int) {
+        self.loadDataFromJsonFile { success in
+            if success {
+                if self.shops.count > index, let items = self.shops[index].items {
+                    self.shopItems = items
+                } else if self.shops.count > index, let items = self.shops[index].prouducts {
+                    self.shopItems = items
+                }
+            }
+        }
+    }
+    
 }
     
 
