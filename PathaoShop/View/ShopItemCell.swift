@@ -19,11 +19,20 @@ class ShopItemCell: UICollectionViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var detailsLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet weak var countView: UIView!
+    
+    var addButtonActionBlock: (()->())?
+    
+    var removeButtonActionBlock: (()->())?
     
     override func awakeFromNib() {
         super.awakeFromNib()
         setupUI()
-        // Initialization code
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        itemCountLabel.text = "0"
     }
     
     func setupUI() {
@@ -42,13 +51,13 @@ class ShopItemCell: UICollectionViewCell {
         priceView.layer.cornerRadius = 8.0
         priceView.layer.borderWidth = 1.0
         priceView.layer.borderColor = UIColor.blue.cgColor
-        //buttonsView.layer.cornerRadius = 8.0
         buttonsView.layer.borderWidth = 1.0
         buttonsView.layer.borderColor = UIColor.blue.cgColor
-        
+        countView.layer.cornerRadius = 6.0
     }
     
-    func configureCell(item: Prouduct) {
+    func configureCell(item: Product) {
+        self.itemCountLabel.text = "\(item.itemCount ?? 0)"
         self.nameLabel.text = item.name
         self.detailsLabel.text = item.prouductDescription
         if let price = item.price {
@@ -58,20 +67,26 @@ class ShopItemCell: UICollectionViewCell {
     }
     
     func loadImage(url: URL?) {
-        if let imageFromCache = ShopViewModel.imageCache.object(forKey: url as AnyObject) as? UIImage {
-            itemImageView.image = imageFromCache
-        } else {
-            DispatchQueue.global().async { [weak self] in
-                if let url = url, let data = try? Data(contentsOf: url) {
-                    if let image = UIImage(data: data) {
-                        ShopViewModel.imageCache.setObject(image, forKey: url as AnyObject)
-                        DispatchQueue.main.async {
-                            self?.itemImageView.image = image
-                        }
+        DispatchQueue.global().async { [weak self] in
+            if let url = url, let data = try? Data(contentsOf: url) {
+                if let image = UIImage(data: data) {
+                    DispatchQueue.main.async {
+                        self?.itemImageView.image = image
                     }
                 }
             }
         }
     }
-
+    
+    @IBAction func addButtonAction(_ sender: Any) {
+        if let addButtonActionBlock = addButtonActionBlock {
+            addButtonActionBlock()
+        }
+    }
+    
+    @IBAction func removeButtonAction(_ sender: Any) {
+        if let removeButtonActionBlock = removeButtonActionBlock {
+            removeButtonActionBlock()
+        }
+    }
 }

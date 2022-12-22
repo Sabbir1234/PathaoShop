@@ -21,6 +21,7 @@
 		0179723E295230E500E66CE6 /* ShopListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0179723D295230E500E66CE6 /* ShopListCell.swift */; };
 		01797240295231D600E66CE6 /* ShopHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0179723F295231D600E66CE6 /* ShopHeaderView.xib */; };
 		017972442952351B00E66CE6 /* ShopHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017972432952351B00E66CE6 /* ShopHeaderView.swift */; };
+		0192368F2954BC9300B43C43 /* CartManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0192368E2954BC9300B43C43 /* CartManager.swift */; };
 		89A0C95329530B2B00ED7537 /* ShopItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A0C95129530B2B00ED7537 /* ShopItemCell.swift */; };
 		89A0C95429530B2B00ED7537 /* ShopItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89A0C95229530B2B00ED7537 /* ShopItemCell.xib */; };
 		89A0C958295316A100ED7537 /* NSObject+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A0C957295316A100ED7537 /* NSObject+Extension.swift */; };
@@ -43,6 +44,7 @@
 		0179723D295230E500E66CE6 /* ShopListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopListCell.swift; sourceTree = "<group>"; };
 		0179723F295231D600E66CE6 /* ShopHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShopHeaderView.xib; sourceTree = "<group>"; };
 		017972432952351B00E66CE6 /* ShopHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopHeaderView.swift; sourceTree = "<group>"; };
+		0192368E2954BC9300B43C43 /* CartManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartManager.swift; sourceTree = "<group>"; };
 		89A0C95129530B2B00ED7537 /* ShopItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopItemCell.swift; sourceTree = "<group>"; };
 		89A0C95229530B2B00ED7537 /* ShopItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShopItemCell.xib; sourceTree = "<group>"; };
 		89A0C957295316A100ED7537 /* NSObject+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+Extension.swift"; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 				0179723229522C2E00E66CE6 /* Info.plist */,
 				0179722A29522C2D00E66CE6 /* PathaoShop.xcdatamodeld */,
 				016AABC229538FBD00053B87 /* ShopModel.swift */,
+				0192368E2954BC9300B43C43 /* CartManager.swift */,
 			);
 			path = PathaoShop;
 			sourceTree = "<group>";
@@ -183,6 +186,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0179723A29522D2300E66CE6 /* HomeViewController.swift in Sources */,
+				0192368F2954BC9300B43C43 /* CartManager.swift in Sources */,
 				0179723E295230E500E66CE6 /* ShopListCell.swift in Sources */,
 				89A0C958295316A100ED7537 /* NSObject+Extension.swift in Sources */,
 				016AABC72953912100053B87 /* AppConstants.swift in Sources */,

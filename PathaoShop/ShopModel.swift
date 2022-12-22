@@ -13,27 +13,28 @@
 import Foundation
 
 // MARK: - WelcomeElement
-struct Shop: Codable {
+class Shop: Codable {
     let shopName: String?
-    let items, prouducts: [Prouduct]?
+    let items, products: [Product]?
 
     enum CodingKeys: String, CodingKey {
         case shopName = "shop_name"
         case items
-        case prouducts = "Prouducts"
+        case products = "Prouducts"
     }
 }
 
 // MARK: - Prouduct
-struct Prouduct: Codable {
+class Product: Codable {
     let name, prouductDescription: String?
     let price: Int?
     let image: String?
-
-    enum CodingKeys: String, CodingKey {
+    var itemCount: Int? = 0
+    private enum CodingKeys: String, CodingKey {
         case name
         case prouductDescription = "description"
         case price, image
+        case itemCount
     }
 }
 

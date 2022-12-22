@@ -34,12 +34,46 @@ class ShopListCell: UITableViewCell {
 
 extension ShopListCell: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel.shopItems.count
+        return min(viewModel.shopItems.count, 5)
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: ShopItemCell = collectionView.dequeueReusableCell(withReuseIdentifier: ShopItemCell.className, for: indexPath) as! ShopItemCell
-        cell.configureCell(item: viewModel.shopItems[indexPath.item])
+        let item = viewModel.shopItems[indexPath.item]
+        cell.configureCell(item: item)
+        
+        //Add button action block
+        cell.addButtonActionBlock = {
+            if let itemCount = item.itemCount {
+                if itemCount < 5 {
+                    item.itemCount = itemCount + 1
+                    CartManager.shared.totalItemNumber += 1
+                }
+                
+            } else {
+                item.itemCount = 1
+            }
+            
+            guard let itemNumber = item.itemCount else { return }
+            cell.itemCountLabel.text = "\(itemNumber)"
+            
+            
+        }
+        
+        //Remove button action block
+        cell.removeButtonActionBlock = {
+            if let itemCount = item.itemCount {
+                if itemCount > 1 {
+                    item.itemCount = itemCount - 1
+                    CartManager.shared.totalItemNumber -= 1
+                }
+            } else {
+                item.itemCount = 0
+            }
+            item.itemCount = (item.itemCount ?? 0) < 0 ? 0 : (item.itemCount ?? 0)
+            guard let itemNumber = item.itemCount else { return }
+            cell.itemCountLabel.text = "\(itemNumber)"
+        }
         return cell
     }
     

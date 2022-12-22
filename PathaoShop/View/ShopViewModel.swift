@@ -13,17 +13,15 @@ protocol HomePageDelegate {
 }
 
 protocol ItemListDelegate {
-    var shopItems: [Prouduct] { get }
+    var shopItems: [Product] { get }
     func loadShopItems(index: Int)
 }
 
 class ShopViewModel: HomePageDelegate, ItemListDelegate {
     
     var shops = [Shop]()
-    var shopItems = [Prouduct]()
-    
-    static let imageCache = NSCache<AnyObject, AnyObject>()
-    
+    var shopItems = [Product]()
+
     func loadDataFromJsonFile(completion: ((_ success: Bool) -> Void)? = nil) {
         if let path = Bundle.main.path(forResource: AppConstant.pathao_shop, ofType: "json") {
             do {
@@ -42,7 +40,7 @@ class ShopViewModel: HomePageDelegate, ItemListDelegate {
             if success {
                 if self.shops.count > index, let items = self.shops[index].items {
                     self.shopItems = items
-                } else if self.shops.count > index, let items = self.shops[index].prouducts {
+                } else if self.shops.count > index, let items = self.shops[index].products {
                     self.shopItems = items
                 }
             }
