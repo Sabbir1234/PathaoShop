@@ -71,6 +71,36 @@
             </objects>
             <point key="canvasLocation" x="928.98550724637687" y="83.705357142857139"/>
         </scene>
+        <!--Store View Controller-->
+        <scene sceneID="ZCZ-gN-it1">
+            <objects>
+                <viewController storyboardIdentifier="StoreViewController" id="9Nl-uR-BUt" customClass="StoreViewController" customModule="PathaoShop" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dnE-Hx-ed1">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="GzF-bq-m1e">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="3ED-CW-ITt"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="GzF-bq-m1e" firstAttribute="top" secondItem="3ED-CW-ITt" secondAttribute="top" id="CdP-JO-s7b"/>
+                            <constraint firstItem="3ED-CW-ITt" firstAttribute="bottom" secondItem="GzF-bq-m1e" secondAttribute="bottom" id="HWo-xs-0ps"/>
+                            <constraint firstItem="3ED-CW-ITt" firstAttribute="trailing" secondItem="GzF-bq-m1e" secondAttribute="trailing" id="mzT-Me-q7R"/>
+                            <constraint firstItem="GzF-bq-m1e" firstAttribute="leading" secondItem="3ED-CW-ITt" secondAttribute="leading" id="yN0-YP-HNT"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="storeItemsTableView" destination="GzF-bq-m1e" id="fdg-dQ-TfI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KiB-uh-cgs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1664" y="83"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="fzN-QU-jcb">
             <objects>

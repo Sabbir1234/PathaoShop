@@ -12,4 +12,8 @@ class CartManager {
     var itemList = [Product]()
     var totalItemNumber = 0
     private init() { }
+    
+    func loadItemsToCart(item: Product) {
+        itemList.append(item)
+    }
 }

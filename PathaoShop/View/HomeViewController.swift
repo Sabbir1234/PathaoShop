@@ -13,15 +13,31 @@ class HomeViewController: UIViewController {
     var viewModel: HomePageDelegate?
     override func viewDidLoad() {
         super.viewDidLoad()
+        addNavBarButton()
         setupTableView()
         viewModel = ShopViewModel()
         viewModel?.loadDataFromJsonFile(completion: nil)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        shopListTableView.reloadData()
     }
     
     private func setupTableView() {
         shopListTableView.delegate = self
         shopListTableView.dataSource = self
         shopListTableView.register(UINib(nibName: ShopHeaderView.className, bundle: nil), forHeaderFooterViewReuseIdentifier: ShopHeaderView.className)
+    }
+    
+    private func addNavBarButton() {
+        let button = UIBarButtonItem(title: "Store", style: .done, target: self, action: #selector(storeButtonAction))
+        navigationItem.rightBarButtonItem = button
+    }
+    
+    @objc func storeButtonAction() {
+        let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: StoreViewController.className)
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 
 }

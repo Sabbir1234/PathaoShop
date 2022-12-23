@@ -25,6 +25,9 @@
 		89A0C95329530B2B00ED7537 /* ShopItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A0C95129530B2B00ED7537 /* ShopItemCell.swift */; };
 		89A0C95429530B2B00ED7537 /* ShopItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89A0C95229530B2B00ED7537 /* ShopItemCell.xib */; };
 		89A0C958295316A100ED7537 /* NSObject+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A0C957295316A100ED7537 /* NSObject+Extension.swift */; };
+		89EB4DE929559ED100D8F08D /* StoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EB4DE829559ED100D8F08D /* StoreViewController.swift */; };
+		89EB4DEC2955A0BE00D8F08D /* StoreItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EB4DEA2955A0BE00D8F08D /* StoreItemCell.swift */; };
+		89EB4DED2955A0BE00D8F08D /* StoreItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89EB4DEB2955A0BE00D8F08D /* StoreItemCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +51,9 @@
 		89A0C95129530B2B00ED7537 /* ShopItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopItemCell.swift; sourceTree = "<group>"; };
 		89A0C95229530B2B00ED7537 /* ShopItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShopItemCell.xib; sourceTree = "<group>"; };
 		89A0C957295316A100ED7537 /* NSObject+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+Extension.swift"; sourceTree = "<group>"; };
+		89EB4DE829559ED100D8F08D /* StoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreViewController.swift; sourceTree = "<group>"; };
+		89EB4DEA2955A0BE00D8F08D /* StoreItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreItemCell.swift; sourceTree = "<group>"; };
+		89EB4DEB2955A0BE00D8F08D /* StoreItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StoreItemCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +113,9 @@
 				89A0C957295316A100ED7537 /* NSObject+Extension.swift */,
 				016AABC42953909200053B87 /* ShopViewModel.swift */,
 				016AABC62953912100053B87 /* AppConstants.swift */,
+				89EB4DE829559ED100D8F08D /* StoreViewController.swift */,
+				89EB4DEA2955A0BE00D8F08D /* StoreItemCell.swift */,
+				89EB4DEB2955A0BE00D8F08D /* StoreItemCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -175,6 +184,7 @@
 				0179722E29522C2E00E66CE6 /* Assets.xcassets in Resources */,
 				89A0C95429530B2B00ED7537 /* ShopItemCell.xib in Resources */,
 				0179722929522C2D00E66CE6 /* Main.storyboard in Resources */,
+				89EB4DED2955A0BE00D8F08D /* StoreItemCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -191,6 +201,8 @@
 				89A0C958295316A100ED7537 /* NSObject+Extension.swift in Sources */,
 				016AABC72953912100053B87 /* AppConstants.swift in Sources */,
 				016AABC329538FBD00053B87 /* ShopModel.swift in Sources */,
+				89EB4DEC2955A0BE00D8F08D /* StoreItemCell.swift in Sources */,
+				89EB4DE929559ED100D8F08D /* StoreViewController.swift in Sources */,
 				016AABC52953909200053B87 /* ShopViewModel.swift in Sources */,
 				0179722229522C2D00E66CE6 /* AppDelegate.swift in Sources */,
 				0179722C29522C2D00E66CE6 /* PathaoShop.xcdatamodeld in Sources */,
@@ -343,7 +355,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 4H5AV98833;
+				DEVELOPMENT_TEAM = A3GF478FK7;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PathaoShop/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -351,6 +363,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -371,7 +384,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 4H5AV98833;
+				DEVELOPMENT_TEAM = A3GF478FK7;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PathaoShop/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -379,6 +392,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

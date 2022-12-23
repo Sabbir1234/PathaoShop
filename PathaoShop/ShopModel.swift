@@ -12,7 +12,7 @@
 
 import Foundation
 
-// MARK: - WelcomeElement
+// MARK: - Shop
 class Shop: Codable {
     let shopName: String?
     let items, products: [Product]?
@@ -30,11 +30,13 @@ class Product: Codable {
     let price: Int?
     let image: String?
     var itemCount: Int? = 0
+    var addedToCart: Bool? = false
     private enum CodingKeys: String, CodingKey {
         case name
         case prouductDescription = "description"
         case price, image
         case itemCount
+        case addedToCart
     }
 }
 

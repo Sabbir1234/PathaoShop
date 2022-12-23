@@ -49,21 +49,19 @@ extension ShopListCell: UICollectionViewDelegate, UICollectionViewDataSource, UI
                     item.itemCount = itemCount + 1
                     CartManager.shared.totalItemNumber += 1
                 }
-                
             } else {
                 item.itemCount = 1
+                CartManager.shared.loadItemsToCart(item: item)
             }
-            
+            item.addedToCart = true
             guard let itemNumber = item.itemCount else { return }
             cell.itemCountLabel.text = "\(itemNumber)"
-            
-            
         }
         
         //Remove button action block
         cell.removeButtonActionBlock = {
             if let itemCount = item.itemCount {
-                if itemCount > 1 {
+                if itemCount > 0 {
                     item.itemCount = itemCount - 1
                     CartManager.shared.totalItemNumber -= 1
                 }
@@ -71,6 +69,7 @@ extension ShopListCell: UICollectionViewDelegate, UICollectionViewDataSource, UI
                 item.itemCount = 0
             }
             item.itemCount = (item.itemCount ?? 0) < 0 ? 0 : (item.itemCount ?? 0)
+            item.addedToCart = (item.itemCount ?? 0) == 0 ? false : true
             guard let itemNumber = item.itemCount else { return }
             cell.itemCountLabel.text = "\(itemNumber)"
         }
