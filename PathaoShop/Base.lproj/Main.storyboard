@@ -11,7 +11,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Home View Controller-->
+        <!--Pathao Shop-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController storyboardIdentifier="HomeViewController" id="BYZ-38-t0r" customClass="HomeViewController" customModule="PathaoShop" customModuleProvider="target" sceneMemberID="viewController">
@@ -24,7 +24,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ShopListCell" rowHeight="150" id="8a1-Pg-jyl" customClass="ShopListCell" customModule="PathaoShop" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="49.5" width="414" height="150"/>
+                                        <rect key="frame" x="0.0" y="32" width="414" height="150"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8a1-Pg-jyl" id="Y5G-jg-BN0">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
@@ -65,7 +65,7 @@
                             <constraint firstItem="VvK-gz-tFk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="o66-xe-wDk"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="xj7-a5-PiG"/>
+                    <navigationItem key="navigationItem" title="Pathao Shop" id="xj7-a5-PiG"/>
                     <connections>
                         <outlet property="shopListTableView" destination="VvK-gz-tFk" id="eLq-zy-aU4"/>
                     </connections>
@@ -333,8 +333,8 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vbE-Wz-Ayr" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="1Qk-x1-5pT">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="1Qk-x1-5pT">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
