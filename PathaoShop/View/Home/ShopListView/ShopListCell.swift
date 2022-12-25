@@ -10,12 +10,15 @@ import UIKit
 class ShopListCell: UITableViewCell {
     @IBOutlet weak var itemsCollectionView: UICollectionView!
     var viewModel: ItemListDelegate!
-    var index: Int = 0
+    var reloadItemsActionBlock: (([Product])->())?
     override func awakeFromNib() {
         super.awakeFromNib()
         viewModel = ShopViewModel()
-        viewModel.loadShopItems(index: index)
         setupCollectionView()
+        reloadItemsActionBlock = { [weak self] items in
+            self?.viewModel.loadShopItems(items: items)
+            self?.itemsCollectionView.reloadData()
+        }
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

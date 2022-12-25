@@ -7,8 +7,8 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
-
+class HomeViewController: UIViewController, ShopHeaderViewDelegate {
+    
     @IBOutlet weak var shopListTableView: UITableView!
     var viewModel: HomePageDelegate?
     override func viewDidLoad() {
@@ -21,6 +21,7 @@ class HomeViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        //viewModel?.loadDataFromJsonFile(completion: nil)
         shopListTableView.reloadData()
     }
     
@@ -39,9 +40,21 @@ class HomeViewController: UIViewController {
         let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: StoreViewController.className)
         self.navigationController?.pushViewController(vc, animated: true)
     }
+    
+    func navigateToCategoryList(index: Int) {
+        if let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: CategoryViewController.className) as? CategoryViewController {
+            if let shopItems = self.viewModel?.shops[index].items {
+                vc.shopItems = shopItems
+            } else if let shopItems = self.viewModel?.shops[index].products {
+                vc.shopItems = shopItems
+            }
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+    }
 
 }
 
+//MARK: UITableview Delegate & Datasource
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -52,18 +65,21 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         return 1
     }
     
-    
-    
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: ShopHeaderView.className) as? ShopHeaderView
+        headerView?.delegate = self
         headerView?.shopNameLabel.text = viewModel?.shops[section].shopName
-        //headerView?.backgroundConfiguration?.backgroundColor = .gray
+        headerView?.index = section
         return headerView!
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: ShopListCell = tableView.dequeueReusableCell(withIdentifier: ShopListCell.className, for: indexPath) as! ShopListCell
-        cell.index = indexPath.row
+        if let items = viewModel?.shops[indexPath.section].items {
+            cell.reloadItemsActionBlock?(items)
+        } else if let items = viewModel?.shops[indexPath.section].products {
+            cell.reloadItemsActionBlock?(items)
+        }
         return cell
     }
     
@@ -78,6 +94,5 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 0
     }
-    
     
 }

@@ -16,17 +16,23 @@ class StoreViewController: UIViewController {
             item.addedToCart == true
         })
         setupTableView()
-        // Do any additional setup after loading the view.
     }
     
+    /// setup table view
     private func setupTableView() {
+        storeItemsTableView.separatorStyle = .none
         storeItemsTableView.delegate = self
         storeItemsTableView.dataSource = self
         storeItemsTableView.register(UINib(nibName: StoreItemCell.className, bundle: nil), forCellReuseIdentifier: StoreItemCell.className)
     }
+    
+    private func dismissVC() {
+        self.navigationController?.popViewController(animated: true)
+    }
 
 }
 
+//MARK: UITableview Delegate & Datasource
 extension StoreViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         items.count
@@ -48,8 +54,9 @@ extension StoreViewController: UITableViewDelegate, UITableViewDataSource {
                 CartManager.shared.loadItemsToCart(item: item)
             }
             item.addedToCart = true
-            guard let itemNumber = item.itemCount else { return }
-            cell.totalCountLabel.text = "\(itemNumber)"
+            guard let itemNumber = item.itemCount, let price = item.price else { return }
+            cell.totalCountLabel.text = "Total count: \(item.itemCount ?? 0)"
+            cell.totalPriceLabel.text = "Total price: \(price * itemNumber) $"
         }
         
         //Remove button action block
@@ -59,13 +66,17 @@ extension StoreViewController: UITableViewDelegate, UITableViewDataSource {
                     item.itemCount = itemCount - 1
                     CartManager.shared.totalItemNumber -= 1
                 }
+                if item.itemCount == 0 {
+                    self.dismissVC()
+                }
             } else {
                 item.itemCount = 0
             }
-            item.itemCount = (item.itemCount ?? 0) < 0 ? 0 : (item.itemCount ?? 0)
+            item.itemCount = (item.itemCount ?? 0) <= 0 ? 0 : (item.itemCount ?? 0)
             item.addedToCart = (item.itemCount ?? 0) == 0 ? false : true
-            guard let itemNumber = item.itemCount else { return }
-            cell.totalCountLabel.text = "\(itemNumber)"
+            guard let itemNumber = item.itemCount, let price = item.price else { return }
+            cell.totalCountLabel.text = "Total count: \(item.itemCount ?? 0)"
+            cell.totalPriceLabel.text = "Total price: \(price * itemNumber) $"
         }
         return cell
     }
@@ -73,5 +84,4 @@ extension StoreViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 270
     }
-    
 }

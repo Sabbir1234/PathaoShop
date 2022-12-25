@@ -7,8 +7,15 @@
 
 import UIKit
 
+protocol ShopHeaderViewDelegate {
+    func navigateToCategoryList(index: Int)
+}
+
 class ShopHeaderView: UITableViewHeaderFooterView {
     @IBOutlet weak var shopNameLabel: UILabel!
+    @IBOutlet weak var seeAllButton: UIButton!
+    var delegate: ShopHeaderViewDelegate?
+    var index = 0
     
     /*
     // Only override draw() if you perform custom drawing.
@@ -19,5 +26,6 @@ class ShopHeaderView: UITableViewHeaderFooterView {
     */
 
     @IBAction func seeAllButtonTapped(_ sender: Any) {
+        delegate?.navigateToCategoryList(index: index)
     }
 }

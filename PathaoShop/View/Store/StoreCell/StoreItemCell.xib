@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -57,8 +58,8 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qou-j7-QmP">
                                                         <rect key="frame" x="0.0" y="40" width="160" height="30"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3o8-Ao-kRq">
-                                                                <rect key="frame" x="0.0" y="0.0" width="160" height="30"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3o8-Ao-kRq">
+                                                                <rect key="frame" x="20" y="0.0" width="140" height="30"/>
                                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -69,7 +70,7 @@
                                                             <constraint firstAttribute="trailing" secondItem="3o8-Ao-kRq" secondAttribute="trailing" id="2QM-7M-sOW"/>
                                                             <constraint firstAttribute="bottom" secondItem="3o8-Ao-kRq" secondAttribute="bottom" id="Plt-Rz-Iqm"/>
                                                             <constraint firstItem="3o8-Ao-kRq" firstAttribute="top" secondItem="Qou-j7-QmP" secondAttribute="top" id="WNy-2W-weS"/>
-                                                            <constraint firstItem="3o8-Ao-kRq" firstAttribute="leading" secondItem="Qou-j7-QmP" secondAttribute="leading" id="dy3-PB-2VB"/>
+                                                            <constraint firstItem="3o8-Ao-kRq" firstAttribute="leading" secondItem="Qou-j7-QmP" secondAttribute="leading" constant="20" id="dy3-PB-2VB"/>
                                                         </constraints>
                                                     </view>
                                                 </subviews>
@@ -89,7 +90,7 @@
                                 <rect key="frame" x="0.0" y="90" width="240" height="30"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kw3-pP-n6s">
-                                        <rect key="frame" x="0.0" y="0.0" width="240" height="30"/>
+                                        <rect key="frame" x="20" y="0.0" width="220" height="30"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -98,7 +99,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Mdd-rv-991"/>
-                                    <constraint firstItem="Kw3-pP-n6s" firstAttribute="leading" secondItem="BcN-HH-aGE" secondAttribute="leading" id="YgN-QZ-JEx"/>
+                                    <constraint firstItem="Kw3-pP-n6s" firstAttribute="leading" secondItem="BcN-HH-aGE" secondAttribute="leading" constant="20" id="YgN-QZ-JEx"/>
                                     <constraint firstAttribute="trailing" secondItem="Kw3-pP-n6s" secondAttribute="trailing" id="okx-Cq-KZ7"/>
                                     <constraint firstAttribute="bottom" secondItem="Kw3-pP-n6s" secondAttribute="bottom" id="t1o-TY-wBl"/>
                                     <constraint firstItem="Kw3-pP-n6s" firstAttribute="top" secondItem="BcN-HH-aGE" secondAttribute="top" id="vh3-04-eBX"/>

@@ -11,6 +11,7 @@ class CartManager {
     static let shared = CartManager()
     var itemList = [Product]()
     var totalItemNumber = 0
+    var shops = [Shop]()
     private init() { }
     
     func loadItemsToCart(item: Product) {
