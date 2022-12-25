@@ -24,7 +24,6 @@ class CategoryViewController: UIViewController {
         categoryItemsCollectionView.dataSource = self
          //Set up the collection view.
         categoryItemsCollectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        categoryItemsCollectionView.backgroundColor = UIColor(named: "AppBgColor")
         categoryItemsCollectionView.alwaysBounceVertical = true
         categoryItemsCollectionView.indicatorStyle = .white
     }
