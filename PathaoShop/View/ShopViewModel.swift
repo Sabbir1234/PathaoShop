@@ -14,19 +14,21 @@ protocol HomePageDelegate {
 
 protocol ItemListDelegate {
     var shopItems: [Product] { get }
-    func loadShopItems(index: Int)
+    func loadShopItems(items: [Product])
 }
 
 class ShopViewModel: HomePageDelegate, ItemListDelegate {
     
     var shops = [Shop]()
     var shopItems = [Product]()
+    
 
     func loadDataFromJsonFile(completion: ((_ success: Bool) -> Void)? = nil) {
         if let path = Bundle.main.path(forResource: AppConstant.pathao_shop, ofType: "json") {
             do {
                 let jsonData = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
                 self.shops = try! JSONDecoder().decode([Shop].self, from: jsonData)
+                CartManager.shared.shops = shops
                 debugPrint("json data is \(shops)")
                 completion?(true)
             } catch let error {
@@ -35,16 +37,8 @@ class ShopViewModel: HomePageDelegate, ItemListDelegate {
         }
     }
     
-    func loadShopItems(index: Int) {
-        self.loadDataFromJsonFile { success in
-            if success {
-                if self.shops.count > index, let items = self.shops[index].items {
-                    self.shopItems = items
-                } else if self.shops.count > index, let items = self.shops[index].products {
-                    self.shopItems = items
-                }
-            }
-        }
+    func loadShopItems(items: [Product]) {
+        self.shopItems = items
     }
     
 }

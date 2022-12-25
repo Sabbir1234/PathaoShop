@@ -10,12 +10,15 @@ import UIKit
 class ShopListCell: UITableViewCell {
     @IBOutlet weak var itemsCollectionView: UICollectionView!
     var viewModel: ItemListDelegate!
-    var index: Int = 0
+    var reloadItemsActionBlock: (([Product])->())?
     override func awakeFromNib() {
         super.awakeFromNib()
         viewModel = ShopViewModel()
-        viewModel.loadShopItems(index: index)
         setupCollectionView()
+        reloadItemsActionBlock = { [weak self] items in
+            self?.viewModel.loadShopItems(items: items)
+            self?.itemsCollectionView.reloadData()
+        }
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -51,11 +54,13 @@ extension ShopListCell: UICollectionViewDelegate, UICollectionViewDataSource, UI
                 }
             } else {
                 item.itemCount = 1
+                CartManager.shared.totalItemNumber += 1
                 CartManager.shared.loadItemsToCart(item: item)
             }
             item.addedToCart = true
-            guard let itemNumber = item.itemCount else { return }
+            guard let itemNumber = item.itemCount, let price = item.price else { return }
             cell.itemCountLabel.text = "\(itemNumber)"
+            cell.priceLabel.text = "Price: \(price * max(itemNumber,1)) $"
         }
         
         //Remove button action block
@@ -70,8 +75,9 @@ extension ShopListCell: UICollectionViewDelegate, UICollectionViewDataSource, UI
             }
             item.itemCount = (item.itemCount ?? 0) < 0 ? 0 : (item.itemCount ?? 0)
             item.addedToCart = (item.itemCount ?? 0) == 0 ? false : true
-            guard let itemNumber = item.itemCount else { return }
+            guard let itemNumber = item.itemCount, let price = item.price else { return }
             cell.itemCountLabel.text = "\(itemNumber)"
+            cell.priceLabel.text = "Price: \(price * max(itemNumber,1)) $"
         }
         return cell
     }

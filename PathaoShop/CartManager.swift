@@ -10,7 +10,16 @@ import Foundation
 class CartManager {
     static let shared = CartManager()
     var itemList = [Product]()
-    var totalItemNumber = 0
+    var popFromStore: (()->())?
+    var totalItemNumber = 0 {
+        didSet {
+            debugPrint("Total number \(totalItemNumber)")
+            if totalItemNumber < 1 {
+                popFromStore?()
+            }
+        }
+    }
+    var shops = [Shop]()
     private init() { }
     
     func loadItemsToCart(item: Product) {
