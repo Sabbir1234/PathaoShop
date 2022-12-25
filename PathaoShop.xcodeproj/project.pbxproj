@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		016AABC329538FBD00053B87 /* ShopModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016AABC229538FBD00053B87 /* ShopModel.swift */; };
+		016AABC52953909200053B87 /* ShopViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016AABC42953909200053B87 /* ShopViewModel.swift */; };
+		016AABC72953912100053B87 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 016AABC62953912100053B87 /* AppConstants.swift */; };
 		0179722229522C2D00E66CE6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0179722129522C2D00E66CE6 /* AppDelegate.swift */; };
 		0179722429522C2D00E66CE6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0179722329522C2D00E66CE6 /* SceneDelegate.swift */; };
-		0179722629522C2D00E66CE6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0179722529522C2D00E66CE6 /* ViewController.swift */; };
 		0179722929522C2D00E66CE6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0179722729522C2D00E66CE6 /* Main.storyboard */; };
 		0179722C29522C2D00E66CE6 /* PathaoShop.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0179722A29522C2D00E66CE6 /* PathaoShop.xcdatamodeld */; };
 		0179722E29522C2E00E66CE6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0179722D29522C2E00E66CE6 /* Assets.xcassets */; };
@@ -19,13 +21,22 @@
 		0179723E295230E500E66CE6 /* ShopListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0179723D295230E500E66CE6 /* ShopListCell.swift */; };
 		01797240295231D600E66CE6 /* ShopHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0179723F295231D600E66CE6 /* ShopHeaderView.xib */; };
 		017972442952351B00E66CE6 /* ShopHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017972432952351B00E66CE6 /* ShopHeaderView.swift */; };
+		0192368F2954BC9300B43C43 /* CartManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0192368E2954BC9300B43C43 /* CartManager.swift */; };
+		89A0C95329530B2B00ED7537 /* ShopItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A0C95129530B2B00ED7537 /* ShopItemCell.swift */; };
+		89A0C95429530B2B00ED7537 /* ShopItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89A0C95229530B2B00ED7537 /* ShopItemCell.xib */; };
+		89A0C958295316A100ED7537 /* NSObject+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A0C957295316A100ED7537 /* NSObject+Extension.swift */; };
+		89EB4DE929559ED100D8F08D /* StoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EB4DE829559ED100D8F08D /* StoreViewController.swift */; };
+		89EB4DEC2955A0BE00D8F08D /* StoreItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EB4DEA2955A0BE00D8F08D /* StoreItemCell.swift */; };
+		89EB4DED2955A0BE00D8F08D /* StoreItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89EB4DEB2955A0BE00D8F08D /* StoreItemCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		016AABC229538FBD00053B87 /* ShopModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopModel.swift; sourceTree = "<group>"; };
+		016AABC42953909200053B87 /* ShopViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopViewModel.swift; sourceTree = "<group>"; };
+		016AABC62953912100053B87 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		0179721E29522C2D00E66CE6 /* PathaoShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PathaoShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0179722129522C2D00E66CE6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0179722329522C2D00E66CE6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		0179722529522C2D00E66CE6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		0179722829522C2D00E66CE6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0179722B29522C2D00E66CE6 /* PathaoShop.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PathaoShop.xcdatamodel; sourceTree = "<group>"; };
 		0179722D29522C2E00E66CE6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -36,6 +47,13 @@
 		0179723D295230E500E66CE6 /* ShopListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopListCell.swift; sourceTree = "<group>"; };
 		0179723F295231D600E66CE6 /* ShopHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShopHeaderView.xib; sourceTree = "<group>"; };
 		017972432952351B00E66CE6 /* ShopHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopHeaderView.swift; sourceTree = "<group>"; };
+		0192368E2954BC9300B43C43 /* CartManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartManager.swift; sourceTree = "<group>"; };
+		89A0C95129530B2B00ED7537 /* ShopItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopItemCell.swift; sourceTree = "<group>"; };
+		89A0C95229530B2B00ED7537 /* ShopItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShopItemCell.xib; sourceTree = "<group>"; };
+		89A0C957295316A100ED7537 /* NSObject+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+Extension.swift"; sourceTree = "<group>"; };
+		89EB4DE829559ED100D8F08D /* StoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreViewController.swift; sourceTree = "<group>"; };
+		89EB4DEA2955A0BE00D8F08D /* StoreItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreItemCell.swift; sourceTree = "<group>"; };
+		89EB4DEB2955A0BE00D8F08D /* StoreItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StoreItemCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,12 +90,13 @@
 				0179723829522CB200E66CE6 /* View */,
 				0179722129522C2D00E66CE6 /* AppDelegate.swift */,
 				0179722329522C2D00E66CE6 /* SceneDelegate.swift */,
-				0179722529522C2D00E66CE6 /* ViewController.swift */,
 				0179722729522C2D00E66CE6 /* Main.storyboard */,
 				0179722D29522C2E00E66CE6 /* Assets.xcassets */,
 				0179722F29522C2E00E66CE6 /* LaunchScreen.storyboard */,
 				0179723229522C2E00E66CE6 /* Info.plist */,
 				0179722A29522C2D00E66CE6 /* PathaoShop.xcdatamodeld */,
+				016AABC229538FBD00053B87 /* ShopModel.swift */,
+				0192368E2954BC9300B43C43 /* CartManager.swift */,
 			);
 			path = PathaoShop;
 			sourceTree = "<group>";
@@ -89,6 +108,14 @@
 				0179723D295230E500E66CE6 /* ShopListCell.swift */,
 				0179723F295231D600E66CE6 /* ShopHeaderView.xib */,
 				017972432952351B00E66CE6 /* ShopHeaderView.swift */,
+				89A0C95129530B2B00ED7537 /* ShopItemCell.swift */,
+				89A0C95229530B2B00ED7537 /* ShopItemCell.xib */,
+				89A0C957295316A100ED7537 /* NSObject+Extension.swift */,
+				016AABC42953909200053B87 /* ShopViewModel.swift */,
+				016AABC62953912100053B87 /* AppConstants.swift */,
+				89EB4DE829559ED100D8F08D /* StoreViewController.swift */,
+				89EB4DEA2955A0BE00D8F08D /* StoreItemCell.swift */,
+				89EB4DEB2955A0BE00D8F08D /* StoreItemCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -155,7 +182,9 @@
 				0179723129522C2E00E66CE6 /* LaunchScreen.storyboard in Resources */,
 				01797240295231D600E66CE6 /* ShopHeaderView.xib in Resources */,
 				0179722E29522C2E00E66CE6 /* Assets.xcassets in Resources */,
+				89A0C95429530B2B00ED7537 /* ShopItemCell.xib in Resources */,
 				0179722929522C2D00E66CE6 /* Main.storyboard in Resources */,
+				89EB4DED2955A0BE00D8F08D /* StoreItemCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -167,11 +196,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				0179723A29522D2300E66CE6 /* HomeViewController.swift in Sources */,
+				0192368F2954BC9300B43C43 /* CartManager.swift in Sources */,
 				0179723E295230E500E66CE6 /* ShopListCell.swift in Sources */,
-				0179722629522C2D00E66CE6 /* ViewController.swift in Sources */,
+				89A0C958295316A100ED7537 /* NSObject+Extension.swift in Sources */,
+				016AABC72953912100053B87 /* AppConstants.swift in Sources */,
+				016AABC329538FBD00053B87 /* ShopModel.swift in Sources */,
+				89EB4DEC2955A0BE00D8F08D /* StoreItemCell.swift in Sources */,
+				89EB4DE929559ED100D8F08D /* StoreViewController.swift in Sources */,
+				016AABC52953909200053B87 /* ShopViewModel.swift in Sources */,
 				0179722229522C2D00E66CE6 /* AppDelegate.swift in Sources */,
 				0179722C29522C2D00E66CE6 /* PathaoShop.xcdatamodeld in Sources */,
 				0179722429522C2D00E66CE6 /* SceneDelegate.swift in Sources */,
+				89A0C95329530B2B00ED7537 /* ShopItemCell.swift in Sources */,
 				017972442952351B00E66CE6 /* ShopHeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -319,7 +355,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 4H5AV98833;
+				DEVELOPMENT_TEAM = A3GF478FK7;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PathaoShop/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -327,6 +363,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -347,7 +384,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 4H5AV98833;
+				DEVELOPMENT_TEAM = A3GF478FK7;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PathaoShop/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -355,6 +392,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

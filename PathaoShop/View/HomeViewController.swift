@@ -10,15 +10,34 @@ import UIKit
 class HomeViewController: UIViewController {
 
     @IBOutlet weak var shopListTableView: UITableView!
+    var viewModel: HomePageDelegate?
     override func viewDidLoad() {
         super.viewDidLoad()
+        addNavBarButton()
+        setupTableView()
+        viewModel = ShopViewModel()
+        viewModel?.loadDataFromJsonFile(completion: nil)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        shopListTableView.reloadData()
+    }
+    
+    private func setupTableView() {
         shopListTableView.delegate = self
         shopListTableView.dataSource = self
-//        shopListTableView.sectionHeaderHeight = UITableView.automaticDimension
-//        shopListTableView.estimatedSectionHeaderHeight = 60
-//        shopListTableView.rowHeight = UITableView.automaticDimension
-//        shopListTableView.estimatedRowHeight = 150
-        shopListTableView.register(UINib(nibName: "ShopHeaderView", bundle: nil), forHeaderFooterViewReuseIdentifier: "ShopHeaderView")
+        shopListTableView.register(UINib(nibName: ShopHeaderView.className, bundle: nil), forHeaderFooterViewReuseIdentifier: ShopHeaderView.className)
+    }
+    
+    private func addNavBarButton() {
+        let button = UIBarButtonItem(title: "Store", style: .done, target: self, action: #selector(storeButtonAction))
+        navigationItem.rightBarButtonItem = button
+    }
+    
+    @objc func storeButtonAction() {
+        let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: StoreViewController.className)
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 
 }
@@ -26,7 +45,7 @@ class HomeViewController: UIViewController {
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 5
+        return viewModel?.shops.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -36,15 +55,15 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "ShopHeaderView") as? ShopHeaderView
-        headerView?.shopNameLabel.text = "Karim Shop"
-        headerView?.backgroundColor = .cyan
+        let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: ShopHeaderView.className) as? ShopHeaderView
+        headerView?.shopNameLabel.text = viewModel?.shops[section].shopName
+        //headerView?.backgroundConfiguration?.backgroundColor = .gray
         return headerView!
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: ShopListCell = tableView.dequeueReusableCell(withIdentifier: "ShopListCell", for: indexPath) as! ShopListCell
-        cell.backgroundColor = .green
+        let cell: ShopListCell = tableView.dequeueReusableCell(withIdentifier: ShopListCell.className, for: indexPath) as! ShopListCell
+        cell.index = indexPath.row
         return cell
     }
     
@@ -53,7 +72,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 150
+        return 300
     }
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
