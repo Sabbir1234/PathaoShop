@@ -93,7 +93,11 @@
 			isa = PBXGroup;
 			children = (
 				0179723B29522DFE00E66CE6 /* pathao-shop.json */,
+				016AABC62953912100053B87 /* AppConstants.swift */,
+				89A0C957295316A100ED7537 /* NSObject+Extension.swift */,
+				0192368E2954BC9300B43C43 /* CartManager.swift */,
 				0179723829522CB200E66CE6 /* View */,
+				01F249A429583B3C0000FB5D /* Model */,
 				0179722129522C2D00E66CE6 /* AppDelegate.swift */,
 				0179722329522C2D00E66CE6 /* SceneDelegate.swift */,
 				0179722729522C2D00E66CE6 /* Main.storyboard */,
@@ -101,9 +105,6 @@
 				0179722F29522C2E00E66CE6 /* LaunchScreen.storyboard */,
 				0179723229522C2E00E66CE6 /* Info.plist */,
 				0179722A29522C2D00E66CE6 /* PathaoShop.xcdatamodeld */,
-				016AABC229538FBD00053B87 /* ShopModel.swift */,
-				0192368E2954BC9300B43C43 /* CartManager.swift */,
-				01F09348295721DA00B038E3 /* CategoryItemCell.swift */,
 			);
 			path = PathaoShop;
 			sourceTree = "<group>";
@@ -113,11 +114,8 @@
 			children = (
 				01F09342295700E600B038E3 /* Store */,
 				01F0933F2957000A00B038E3 /* Home */,
-				89A0C957295316A100ED7537 /* NSObject+Extension.swift */,
 				016AABC42953909200053B87 /* ShopViewModel.swift */,
-				016AABC62953912100053B87 /* AppConstants.swift */,
-				01F093462957188000B038E3 /* ColumnFlowLayout.swift */,
-				01F0934429570C3800B038E3 /* CategoryViewController.swift */,
+				01F249A329583B1A0000FB5D /* Category */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -167,6 +165,24 @@
 				89EB4DEB2955A0BE00D8F08D /* StoreItemCell.xib */,
 			);
 			path = StoreCell;
+			sourceTree = "<group>";
+		};
+		01F249A329583B1A0000FB5D /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				01F093462957188000B038E3 /* ColumnFlowLayout.swift */,
+				01F0934429570C3800B038E3 /* CategoryViewController.swift */,
+				01F09348295721DA00B038E3 /* CategoryItemCell.swift */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		01F249A429583B3C0000FB5D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				016AABC229538FBD00053B87 /* ShopModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

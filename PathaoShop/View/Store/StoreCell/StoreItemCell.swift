@@ -41,23 +41,24 @@ class StoreItemCell: UITableViewCell {
     
     /// setup UI
     func setupUI() {
-        contentView.layer.borderWidth = 5
-        contentView.layer.borderColor = UIColor.blue.cgColor
+        contentView.layer.borderWidth = 2
+        contentView.layer.borderColor = UIColor(named: "boarder")?.cgColor
         contentView.layer.cornerRadius = 15.0
-        itemImageView.layer.borderWidth = 3
-        itemImageView.layer.borderColor = UIColor.blue.cgColor
+        contentView.clipsToBounds = true
+        itemImageView.layer.borderWidth = 1.0
+        itemImageView.layer.borderColor = UIColor(named: "viewBoarder")?.cgColor
         itemImageView.layer.cornerRadius = 10.0
         nameView.layer.cornerRadius = 8.0
         nameView.layer.borderWidth = 1.0
-        nameView.layer.borderColor = UIColor.blue.cgColor
+        nameView.layer.borderColor = UIColor(named: "viewBoarder")?.cgColor
         totalCountView.layer.cornerRadius = 8.0
         totalCountView.layer.borderWidth = 1.0
-        totalCountView.layer.borderColor = UIColor.blue.cgColor
+        totalCountView.layer.borderColor = UIColor(named: "viewBoarder")?.cgColor
         totalPriceView.layer.cornerRadius = 8.0
         totalPriceView.layer.borderWidth = 1.0
-        totalPriceView.layer.borderColor = UIColor.blue.cgColor
+        totalPriceView.layer.borderColor = UIColor(named: "viewBoarder")?.cgColor
         buttonView.layer.borderWidth = 1.0
-        buttonView.layer.borderColor = UIColor.blue.cgColor
+        buttonView.layer.borderColor = UIColor(named: "viewBoarder")?.cgColor
     }
     
     /// configure cell

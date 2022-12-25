@@ -15,18 +15,29 @@ class StoreViewController: UIViewController {
         items = CartManager.shared.itemList.filter({ item in
             item.addedToCart == true
         })
+        if items.isEmpty {
+            popVC()
+        }
         setupTableView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        CartManager.shared.popFromStore = {
+            self.popVC()
+        }
     }
     
     /// setup table view
     private func setupTableView() {
         storeItemsTableView.separatorStyle = .none
+        storeItemsTableView.allowsSelection = false
         storeItemsTableView.delegate = self
         storeItemsTableView.dataSource = self
         storeItemsTableView.register(UINib(nibName: StoreItemCell.className, bundle: nil), forCellReuseIdentifier: StoreItemCell.className)
     }
     
-    private func dismissVC() {
+    private func popVC() {
         self.navigationController?.popViewController(animated: true)
     }
 
@@ -51,6 +62,7 @@ extension StoreViewController: UITableViewDelegate, UITableViewDataSource {
                 }
             } else {
                 item.itemCount = 1
+                CartManager.shared.totalItemNumber += 1
                 CartManager.shared.loadItemsToCart(item: item)
             }
             item.addedToCart = true
@@ -66,18 +78,23 @@ extension StoreViewController: UITableViewDelegate, UITableViewDataSource {
                     item.itemCount = itemCount - 1
                     CartManager.shared.totalItemNumber -= 1
                 }
-                if item.itemCount == 0 {
-                    self.dismissVC()
-                }
             } else {
                 item.itemCount = 0
             }
             item.itemCount = (item.itemCount ?? 0) <= 0 ? 0 : (item.itemCount ?? 0)
             item.addedToCart = (item.itemCount ?? 0) == 0 ? false : true
+            if item.addedToCart == false {
+//                self.items = CartManager.shared.itemList.filter({ item in
+//                    item.addedToCart == true
+//                })
+                self.items.remove(at: indexPath.row)
+                tableView.deleteRows(at: [indexPath], with: .automatic)
+            }
             guard let itemNumber = item.itemCount, let price = item.price else { return }
             cell.totalCountLabel.text = "Total count: \(item.itemCount ?? 0)"
             cell.totalPriceLabel.text = "Total price: \(price * itemNumber) $"
         }
+        
         return cell
     }
     

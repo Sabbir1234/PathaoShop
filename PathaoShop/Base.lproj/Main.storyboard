@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -134,22 +135,22 @@
                                                             </constraints>
                                                         </imageView>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k1d-Tk-LUl" userLabel="Count View">
-                                                            <rect key="frame" x="150" y="18" width="50" height="26"/>
+                                                            <rect key="frame" x="140" y="18" width="50" height="26"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yuX-Bf-HPl">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="26"/>
-                                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                                    <rect key="frame" x="5" y="0.0" width="40" height="26"/>
+                                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="13"/>
                                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                             </subviews>
-                                                            <color key="backgroundColor" systemColor="systemRedColor"/>
+                                                            <color key="backgroundColor" red="0.72941178080000002" green="0.34901961679999999" blue="0.32941177490000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="26" id="UMu-sR-T0N"/>
                                                                 <constraint firstItem="yuX-Bf-HPl" firstAttribute="top" secondItem="k1d-Tk-LUl" secondAttribute="top" id="WtW-Jb-y4I"/>
-                                                                <constraint firstAttribute="trailing" secondItem="yuX-Bf-HPl" secondAttribute="trailing" id="ZDi-GP-SI8"/>
+                                                                <constraint firstAttribute="trailing" secondItem="yuX-Bf-HPl" secondAttribute="trailing" constant="5" id="ZDi-GP-SI8"/>
                                                                 <constraint firstAttribute="bottom" secondItem="yuX-Bf-HPl" secondAttribute="bottom" id="aFU-7W-Ziq"/>
-                                                                <constraint firstItem="yuX-Bf-HPl" firstAttribute="leading" secondItem="k1d-Tk-LUl" secondAttribute="leading" id="sGM-SW-twS"/>
+                                                                <constraint firstItem="yuX-Bf-HPl" firstAttribute="leading" secondItem="k1d-Tk-LUl" secondAttribute="leading" constant="5" id="sGM-SW-twS"/>
                                                             </constraints>
                                                         </view>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="00a-wy-C0I">
@@ -159,8 +160,8 @@
                                                                     <rect key="frame" x="0.0" y="0.0" width="140" height="16"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="byM-h3-cDM">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="140" height="16"/>
-                                                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                                            <rect key="frame" x="5" y="0.0" width="130" height="16"/>
+                                                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="13"/>
                                                                             <nil key="textColor"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
@@ -168,8 +169,8 @@
                                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                     <constraints>
                                                                         <constraint firstItem="byM-h3-cDM" firstAttribute="top" secondItem="zjm-kH-dIt" secondAttribute="top" id="Mcz-g5-igl"/>
-                                                                        <constraint firstAttribute="trailing" secondItem="byM-h3-cDM" secondAttribute="trailing" id="Mw8-kY-sWH"/>
-                                                                        <constraint firstItem="byM-h3-cDM" firstAttribute="leading" secondItem="zjm-kH-dIt" secondAttribute="leading" id="YW5-SZ-2IH"/>
+                                                                        <constraint firstAttribute="trailing" secondItem="byM-h3-cDM" secondAttribute="trailing" constant="5" id="Mw8-kY-sWH"/>
+                                                                        <constraint firstItem="byM-h3-cDM" firstAttribute="leading" secondItem="zjm-kH-dIt" secondAttribute="leading" constant="5" id="YW5-SZ-2IH"/>
                                                                         <constraint firstAttribute="bottom" secondItem="byM-h3-cDM" secondAttribute="bottom" id="vcj-hy-YfZ"/>
                                                                     </constraints>
                                                                 </view>
@@ -177,8 +178,8 @@
                                                                     <rect key="frame" x="0.0" y="24" width="140" height="15.5"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p4k-bk-JS4">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="140" height="15.5"/>
-                                                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                                            <rect key="frame" x="5" y="0.0" width="130" height="15.5"/>
+                                                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="13"/>
                                                                             <nil key="textColor"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
@@ -186,17 +187,17 @@
                                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                     <constraints>
                                                                         <constraint firstItem="p4k-bk-JS4" firstAttribute="top" secondItem="AtV-UN-kdc" secondAttribute="top" id="Gwu-FJ-bfv"/>
-                                                                        <constraint firstAttribute="trailing" secondItem="p4k-bk-JS4" secondAttribute="trailing" id="O6W-ao-ZQr"/>
+                                                                        <constraint firstAttribute="trailing" secondItem="p4k-bk-JS4" secondAttribute="trailing" constant="5" id="O6W-ao-ZQr"/>
                                                                         <constraint firstAttribute="bottom" secondItem="p4k-bk-JS4" secondAttribute="bottom" id="WHK-V5-O4I"/>
-                                                                        <constraint firstItem="p4k-bk-JS4" firstAttribute="leading" secondItem="AtV-UN-kdc" secondAttribute="leading" id="ofk-JS-pth"/>
+                                                                        <constraint firstItem="p4k-bk-JS4" firstAttribute="leading" secondItem="AtV-UN-kdc" secondAttribute="leading" constant="5" id="ofk-JS-pth"/>
                                                                     </constraints>
                                                                 </view>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cjM-hB-l4V">
                                                                     <rect key="frame" x="0.0" y="47.5" width="140" height="16"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pyM-VY-UDJ">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="140" height="16"/>
-                                                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                                            <rect key="frame" x="5" y="0.0" width="130" height="16"/>
+                                                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="13"/>
                                                                             <nil key="textColor"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
@@ -205,8 +206,8 @@
                                                                     <constraints>
                                                                         <constraint firstAttribute="bottom" secondItem="pyM-VY-UDJ" secondAttribute="bottom" id="M5R-Ja-UXZ"/>
                                                                         <constraint firstItem="pyM-VY-UDJ" firstAttribute="top" secondItem="cjM-hB-l4V" secondAttribute="top" id="QTg-Y5-iRq"/>
-                                                                        <constraint firstItem="pyM-VY-UDJ" firstAttribute="leading" secondItem="cjM-hB-l4V" secondAttribute="leading" id="WeM-nu-qrL"/>
-                                                                        <constraint firstAttribute="trailing" secondItem="pyM-VY-UDJ" secondAttribute="trailing" id="aW5-Oa-vil"/>
+                                                                        <constraint firstItem="pyM-VY-UDJ" firstAttribute="leading" secondItem="cjM-hB-l4V" secondAttribute="leading" constant="5" id="WeM-nu-qrL"/>
+                                                                        <constraint firstAttribute="trailing" secondItem="pyM-VY-UDJ" secondAttribute="trailing" constant="5" id="aW5-Oa-vil"/>
                                                                     </constraints>
                                                                 </view>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lQD-KV-4F4">
@@ -247,20 +248,21 @@
                                                             </subviews>
                                                         </stackView>
                                                     </subviews>
-                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    <color key="backgroundColor" name="AppBgColor"/>
                                                     <constraints>
                                                         <constraint firstAttribute="bottom" secondItem="00a-wy-C0I" secondAttribute="bottom" constant="20" id="4VO-q4-lhf"/>
                                                         <constraint firstItem="00a-wy-C0I" firstAttribute="leading" secondItem="ize-vg-UDg" secondAttribute="leading" constant="30" id="CMF-kz-Ydk"/>
-                                                        <constraint firstItem="k1d-Tk-LUl" firstAttribute="leading" secondItem="0NB-Zy-jUw" secondAttribute="trailing" constant="20" id="PHo-6s-aIp"/>
+                                                        <constraint firstItem="k1d-Tk-LUl" firstAttribute="leading" secondItem="0NB-Zy-jUw" secondAttribute="trailing" constant="10" id="PHo-6s-aIp"/>
                                                         <constraint firstAttribute="trailing" secondItem="00a-wy-C0I" secondAttribute="trailing" constant="30" id="U2w-dU-VRb"/>
                                                         <constraint firstItem="k1d-Tk-LUl" firstAttribute="top" secondItem="0NB-Zy-jUw" secondAttribute="top" constant="10" id="XSn-wu-tpq"/>
                                                         <constraint firstItem="00a-wy-C0I" firstAttribute="top" secondItem="0NB-Zy-jUw" secondAttribute="bottom" constant="15" id="hih-aI-eml"/>
-                                                        <constraint firstAttribute="trailing" secondItem="k1d-Tk-LUl" secondAttribute="trailing" id="jKn-Y2-V8p"/>
+                                                        <constraint firstAttribute="trailing" secondItem="k1d-Tk-LUl" secondAttribute="trailing" constant="10" id="jKn-Y2-V8p"/>
                                                         <constraint firstItem="0NB-Zy-jUw" firstAttribute="top" secondItem="ize-vg-UDg" secondAttribute="top" constant="8" id="mZ4-y7-u5M"/>
                                                         <constraint firstItem="0NB-Zy-jUw" firstAttribute="centerX" secondItem="ize-vg-UDg" secondAttribute="centerX" id="tRg-9Y-vIU"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
+                                            <color key="backgroundColor" name="AppBgColor"/>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="ize-vg-UDg" secondAttribute="trailing" id="Rin-Q9-A7h"/>
                                                 <constraint firstAttribute="bottom" secondItem="ize-vg-UDg" secondAttribute="bottom" id="ept-mA-8dr"/>
@@ -323,14 +325,14 @@
         </scene>
     </scenes>
     <resources>
+        <namedColor name="AppBgColor">
+            <color red="0.9100000262260437" green="0.93699997663497925" blue="0.96899998188018799" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

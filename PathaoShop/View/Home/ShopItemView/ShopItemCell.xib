@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -38,7 +39,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemRedColor"/>
+                                <color key="backgroundColor" red="0.72941178080000002" green="0.34901961679999999" blue="0.32941177490000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="Gr4-8I-hQX" secondAttribute="trailing" id="0XI-kw-XKJ"/>
                                     <constraint firstItem="Gr4-8I-hQX" firstAttribute="leading" secondItem="kxo-sq-xSp" secondAttribute="leading" id="e7N-CV-Svr"/>
@@ -142,7 +143,7 @@
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="AppBgColor"/>
                         <constraints>
                             <constraint firstItem="aFX-Vv-KrD" firstAttribute="top" secondItem="zz6-D7-j5F" secondAttribute="bottom" constant="15" id="4wZ-cP-R4p"/>
                             <constraint firstItem="kxo-sq-xSp" firstAttribute="leading" secondItem="zz6-D7-j5F" secondAttribute="trailing" constant="20" id="H7S-7o-36G"/>
@@ -182,14 +183,14 @@
         </collectionViewCell>
     </objects>
     <resources>
+        <namedColor name="AppBgColor">
+            <color red="0.9100000262260437" green="0.93699997663497925" blue="0.96899998188018799" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

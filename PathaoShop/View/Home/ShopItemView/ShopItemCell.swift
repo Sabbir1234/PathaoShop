@@ -37,23 +37,24 @@ class ShopItemCell: UICollectionViewCell {
     
     /// setup UI
     func setupUI() {
-        contentView.layer.borderWidth = 5
-        contentView.layer.borderColor = UIColor.blue.cgColor
+        contentView.layer.borderWidth = 2
+        contentView.layer.borderColor = UIColor(named: "boarder")?.cgColor
+        contentView.clipsToBounds = true
         contentView.layer.cornerRadius = 15.0
-        itemImageView.layer.borderWidth = 3
-        itemImageView.layer.borderColor = UIColor.blue.cgColor
+        itemImageView.layer.borderWidth = 1.0
+        itemImageView.layer.borderColor = UIColor(named: "viewBoarder")?.cgColor
         itemImageView.layer.cornerRadius = 10.0
         nameView.layer.cornerRadius = 8.0
         nameView.layer.borderWidth = 1.0
-        nameView.layer.borderColor = UIColor.blue.cgColor
+        nameView.layer.borderColor = UIColor(named: "viewBoarder")?.cgColor
         DetailsView.layer.cornerRadius = 8.0
         DetailsView.layer.borderWidth = 1.0
-        DetailsView.layer.borderColor = UIColor.blue.cgColor
+        DetailsView.layer.borderColor = UIColor(named: "viewBoarder")?.cgColor
         priceView.layer.cornerRadius = 8.0
         priceView.layer.borderWidth = 1.0
-        priceView.layer.borderColor = UIColor.blue.cgColor
+        priceView.layer.borderColor = UIColor(named: "viewBoarder")?.cgColor
         buttonsView.layer.borderWidth = 1.0
-        buttonsView.layer.borderColor = UIColor.blue.cgColor
+        buttonsView.layer.borderColor = UIColor(named: "viewBoarder")?.cgColor
         countView.layer.cornerRadius = 6.0
     }
     
@@ -64,7 +65,7 @@ class ShopItemCell: UICollectionViewCell {
         self.nameLabel.text = item.name
         self.detailsLabel.text = item.prouductDescription
         if let price = item.price {
-            self.priceLabel.text = "\(price) $"
+            self.priceLabel.text = "Price: \(price * (item.itemCount ?? 1)) $"
         }
         loadImage(url: URL(string: item.image ?? ""))
     }
