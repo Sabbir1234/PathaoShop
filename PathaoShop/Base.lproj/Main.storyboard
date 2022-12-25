@@ -83,26 +83,49 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="GzF-bq-m1e">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="752"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jln-bT-8Fd">
+                                <rect key="frame" x="0.0" y="796" width="414" height="100"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WHm-r9-ewx">
+                                        <rect key="frame" x="30" y="20" width="354" height="60"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.31372550129999999" green="0.68627452850000004" blue="0.71372550729999995" alpha="0.67785395408163263" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstItem="WHm-r9-ewx" firstAttribute="leading" secondItem="jln-bT-8Fd" secondAttribute="leading" constant="30" id="DRj-Xd-Zfv"/>
+                                    <constraint firstAttribute="trailing" secondItem="WHm-r9-ewx" secondAttribute="trailing" constant="30" id="Kmd-yy-3JW"/>
+                                    <constraint firstAttribute="height" constant="100" id="ReI-CF-J16"/>
+                                    <constraint firstItem="WHm-r9-ewx" firstAttribute="top" secondItem="jln-bT-8Fd" secondAttribute="top" constant="20" id="Ytt-QR-k9T"/>
+                                    <constraint firstAttribute="bottom" secondItem="WHm-r9-ewx" secondAttribute="bottom" constant="20" id="rM2-y7-4W1"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="3ED-CW-ITt"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="GzF-bq-m1e" firstAttribute="top" secondItem="3ED-CW-ITt" secondAttribute="top" id="CdP-JO-s7b"/>
-                            <constraint firstItem="3ED-CW-ITt" firstAttribute="bottom" secondItem="GzF-bq-m1e" secondAttribute="bottom" id="HWo-xs-0ps"/>
+                            <constraint firstItem="jln-bT-8Fd" firstAttribute="top" secondItem="GzF-bq-m1e" secondAttribute="bottom" id="HWo-xs-0ps"/>
+                            <constraint firstItem="jln-bT-8Fd" firstAttribute="leading" secondItem="3ED-CW-ITt" secondAttribute="leading" id="Hvy-ci-5Yg"/>
+                            <constraint firstAttribute="bottom" secondItem="jln-bT-8Fd" secondAttribute="bottom" id="SKp-aO-Pfh"/>
+                            <constraint firstItem="3ED-CW-ITt" firstAttribute="trailing" secondItem="jln-bT-8Fd" secondAttribute="trailing" id="Vxb-W1-X0b"/>
                             <constraint firstItem="3ED-CW-ITt" firstAttribute="trailing" secondItem="GzF-bq-m1e" secondAttribute="trailing" id="mzT-Me-q7R"/>
                             <constraint firstItem="GzF-bq-m1e" firstAttribute="leading" secondItem="3ED-CW-ITt" secondAttribute="leading" id="yN0-YP-HNT"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="storeItemsTableView" destination="GzF-bq-m1e" id="fdg-dQ-TfI"/>
+                        <outlet property="totalPriceLabel" destination="WHm-r9-ewx" id="OOs-y5-bmt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KiB-uh-cgs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1664" y="83"/>
+            <point key="canvasLocation" x="1663.7681159420292" y="82.366071428571431"/>
         </scene>
         <!--Category View Controller-->
         <scene sceneID="ppg-Tw-NRW">

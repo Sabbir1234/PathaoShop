@@ -9,12 +9,20 @@ import UIKit
 
 class StoreViewController: UIViewController {
     @IBOutlet weak var storeItemsTableView: UITableView!
+    @IBOutlet weak var totalPriceLabel: UILabel!
     var items = [Product]()
+    var totalPrice = 0
     override func viewDidLoad() {
         super.viewDidLoad()
+        setInitialDetails()
+        
+    }
+    
+    private func setInitialDetails() {
         items = CartManager.shared.itemList.filter({ item in
             item.addedToCart == true
         })
+        setTotalPrice()
         if items.isEmpty {
             popVC()
         }
@@ -26,6 +34,15 @@ class StoreViewController: UIViewController {
         CartManager.shared.popFromStore = {
             self.popVC()
         }
+    }
+    
+    private func setTotalPrice(){
+        for item in items {
+            if let price = item.price, let itemCount = item.itemCount {
+                totalPrice +=  (price * itemCount)
+            }
+        }
+        totalPriceLabel.text = "Total price: \(totalPrice)"
     }
     
     /// setup table view
@@ -59,6 +76,8 @@ extension StoreViewController: UITableViewDelegate, UITableViewDataSource {
                 if itemCount < 5 {
                     item.itemCount = itemCount + 1
                     CartManager.shared.totalItemNumber += 1
+                    self.totalPrice += item.price ?? 0
+                    self.totalPriceLabel.text = "Total price: \(self.totalPrice) $"
                 }
             } else {
                 item.itemCount = 1
@@ -77,6 +96,8 @@ extension StoreViewController: UITableViewDelegate, UITableViewDataSource {
                 if itemCount > 0 {
                     item.itemCount = itemCount - 1
                     CartManager.shared.totalItemNumber -= 1
+                    self.totalPrice -= item.price ?? 0
+                    self.totalPriceLabel.text = "Total price: \(self.totalPrice) $"
                 }
             } else {
                 item.itemCount = 0
@@ -84,11 +105,10 @@ extension StoreViewController: UITableViewDelegate, UITableViewDataSource {
             item.itemCount = (item.itemCount ?? 0) <= 0 ? 0 : (item.itemCount ?? 0)
             item.addedToCart = (item.itemCount ?? 0) == 0 ? false : true
             if item.addedToCart == false {
-//                self.items = CartManager.shared.itemList.filter({ item in
-//                    item.addedToCart == true
-//                })
-                self.items.remove(at: indexPath.row)
-                tableView.deleteRows(at: [indexPath], with: .automatic)
+                self.items = CartManager.shared.itemList.filter({ item in
+                    item.addedToCart == true
+                })
+                tableView.reloadData()
             }
             guard let itemNumber = item.itemCount, let price = item.price else { return }
             cell.totalCountLabel.text = "Total count: \(item.itemCount ?? 0)"

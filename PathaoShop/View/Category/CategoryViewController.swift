@@ -19,6 +19,11 @@ class CategoryViewController: UIViewController {
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        categoryItemsCollectionView.reloadData()
+    }
+    
     private func setupCollectionView() {
         categoryItemsCollectionView.delegate = self
         categoryItemsCollectionView.dataSource = self
@@ -57,11 +62,13 @@ extension CategoryViewController: UICollectionViewDelegate, UICollectionViewData
                 }
             } else {
                 item.itemCount = 1
+                CartManager.shared.totalItemNumber += 1
                 CartManager.shared.loadItemsToCart(item: item)
             }
             item.addedToCart = true
-            guard let itemNumber = item.itemCount else { return }
+            guard let itemNumber = item.itemCount, let price = item.price else { return }
             cell.itemCountLabel.text = "\(itemNumber)"
+            cell.priceLabel.text = "Price: \(price * max(itemNumber,1)) $"
         }
         
         //Remove button action block
@@ -76,8 +83,9 @@ extension CategoryViewController: UICollectionViewDelegate, UICollectionViewData
             }
             item.itemCount = (item.itemCount ?? 0) < 0 ? 0 : (item.itemCount ?? 0)
             item.addedToCart = (item.itemCount ?? 0) == 0 ? false : true
-            guard let itemNumber = item.itemCount else { return }
+            guard let itemNumber = item.itemCount, let price = item.price else { return }
             cell.itemCountLabel.text = "\(itemNumber)"
+            cell.priceLabel.text = "Price: \(price * max(itemNumber,1)) $"
         }
         return cell
     }
